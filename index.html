@@ -6,144 +6,785 @@
 
   <title>The Leopard Savvy | Timeless. Chic. Fierce Finds.</title>
 
+  <meta
+    name="description"
+    content="The Leopard Savvy — a curated fashion boutique featuring timeless, chic and fierce finds."
+  >
+
   <style>
+    :root {
+      --burgundy: #5a1028;
+      --burgundy-light: #7b3048;
+      --cream: #fffaf6;
+      --blush: #f5e3e3;
+      --blush-dark: #ead0d2;
+      --text: #321c23;
+      --muted: #866b72;
+      --white: #ffffff;
+      --border: #eadbdd;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #fdf8f4;
-      color: #241d1d;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    header {
-      padding: 22px 25px;
+    button,
+    a {
+      font-family: inherit;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* =========================
+       ANNOUNCEMENT BAR
+    ========================== */
+
+    .announcement {
+      background: var(--burgundy);
+      color: var(--white);
       text-align: center;
-      border-bottom: 1px solid #eaded8;
-      background: #fdf8f4;
-    }
-
-    .brand {
-      font-family: Georgia, serif;
-      font-size: 27px;
-      letter-spacing: 3px;
-      font-weight: bold;
-    }
-
-    .tagline {
-      margin-top: 7px;
+      padding: 8px 15px;
       font-size: 11px;
-      letter-spacing: 2px;
+      letter-spacing: 1.8px;
       text-transform: uppercase;
     }
 
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 250, 246, 0.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      min-height: 74px;
+      padding: 12px 22px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand-name {
+      text-decoration: none;
+      color: var(--burgundy);
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 2.5px;
+      white-space: nowrap;
+    }
+
     nav {
-      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
     }
 
     nav a {
-      color: #241d1d;
       text-decoration: none;
-      margin: 0 9px;
+      color: var(--burgundy);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      opacity: 0.65;
+    }
+
+    .cart-button {
+      border: 1px solid var(--burgundy);
+      background: transparent;
+      color: var(--burgundy);
+      padding: 8px 13px;
+      cursor: pointer;
       font-size: 12px;
       letter-spacing: 1px;
     }
 
+    .cart-count {
+      font-weight: bold;
+      margin-left: 3px;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
     .hero {
-      min-height: 75vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: var(--blush);
       text-align: center;
-      padding: 50px 25px;
-      background: #f5e2df;
+      padding: 55px 20px 70px;
+    }
+
+    .hero-logo {
+      width: min(330px, 78vw);
+      height: auto;
+      display: block;
+      margin: 0 auto 30px;
+      border-radius: 4px;
     }
 
     .hero h1 {
-      font-family: Georgia, serif;
-      font-size: 52px;
-      line-height: 1.05;
-      margin-bottom: 18px;
+      color: var(--burgundy);
+      font-size: clamp(32px, 7vw, 62px);
+      line-height: 1.1;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
     }
 
-    .hero p {
-      font-size: 15px;
-      margin-bottom: 28px;
+    .hero-tagline {
+      color: var(--burgundy-light);
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
 
     .button {
       display: inline-block;
-      background: #241d1d;
+      margin-top: 28px;
+      padding: 14px 28px;
+      background: var(--burgundy);
       color: white;
       text-decoration: none;
-      padding: 15px 30px;
-      font-size: 12px;
+      border: 1px solid var(--burgundy);
+      font-size: 11px;
       letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: 0.25s ease;
     }
 
-    .section {
-      padding: 65px 25px;
+    .button:hover {
+      background: transparent;
+      color: var(--burgundy);
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================== */
+
+    section {
+      padding: 75px 20px;
+    }
+
+    .section-inner {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .eyebrow {
+      color: var(--burgundy-light);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      color: var(--burgundy);
+      font-size: clamp(27px, 5vw, 40px);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-description {
+      max-width: 600px;
+      margin: 10px auto 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       NEW ARRIVALS
+    ========================== */
+
+    .products-section {
+      background: var(--cream);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .product-image {
+      aspect-ratio: 3 / 4;
+      background: var(--blush);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--burgundy-light);
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .product-info {
+      padding: 16px;
+    }
+
+    .product-id {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .product-name {
+      color: var(--burgundy);
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .product-price {
+      color: var(--burgundy);
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .product-size {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .product-actions button {
+      flex: 1;
+      padding: 9px 6px;
+      cursor: pointer;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .add-cart {
+      background: var(--burgundy);
+      color: white;
+      border: 1px solid var(--burgundy);
+    }
+
+    .whatsapp-order {
+      background: transparent;
+      color: var(--burgundy);
+      border: 1px solid var(--burgundy);
+    }
+
+    /* =========================
+       CATEGORIES
+    ========================== */
+
+    .categories-section {
+      background: var(--blush);
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .category-card {
+      min-height: 180px;
+      background: var(--cream);
+      border: 1px solid var(--blush-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: var(--burgundy);
+      font-size: 18px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: 0.25s ease;
+    }
+
+    .category-card:hover {
+      background: var(--burgundy);
+      color: white;
+    }
+
+    /* =========================
+       WHY US
+    ========================== */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
       text-align: center;
     }
 
-    .section h2 {
-      font-family: Georgia, serif;
-      font-size: 32px;
+    .why-card {
+      padding: 25px 15px;
+    }
+
+    .why-icon {
+      font-size: 28px;
       margin-bottom: 12px;
     }
 
-    .section p {
-      color: #665b58;
-      font-size: 14px;
-      margin-bottom: 30px;
+    .why-card h3 {
+      color: var(--burgundy);
+      font-size: 16px;
+      margin-bottom: 8px;
     }
 
-    .collections {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      max-width: 800px;
-      margin: auto;
+    .why-card p {
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    .collection {
-      background: #ead8d4;
-      padding: 55px 10px;
-      font-family: Georgia, serif;
-      font-size: 20px;
-    }
+    /* =========================
+       ABOUT
+    ========================== */
 
-    .about {
-      background: #241d1d;
-      color: white;
-    }
-
-    .about p {
-      color: #eee3df;
-      max-width: 600px;
-      margin: auto;
-      line-height: 1.8;
-    }
-
-    footer {
-      background: #171313;
+    .about-section {
+      background: var(--burgundy);
       color: white;
       text-align: center;
-      padding: 30px 20px;
+    }
+
+    .about-inner {
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .about-section .eyebrow {
+      color: #e9bfc7;
+    }
+
+    .about-section .section-title {
+      color: white;
+    }
+
+    .about-section p {
+      color: #f4dfe2;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    /* =========================
+       LAUNCHING SOON
+    ========================== */
+
+    .launch-section {
+      background: var(--blush);
+      text-align: center;
+    }
+
+    .launch-box {
+      max-width: 800px;
+      margin: auto;
+      padding: 55px 25px;
+      border: 1px solid var(--blush-dark);
+      background: rgba(255, 250, 246, 0.65);
+    }
+
+    .launch-box h2 {
+      color: var(--burgundy);
+      font-size: clamp(28px, 6vw, 45px);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .launch-box p {
+      max-width: 570px;
+      margin: 15px auto 0;
+      color: var(--muted);
+    }
+
+    /* =========================
+       INSTAGRAM
+    ========================== */
+
+    .instagram-section {
+      text-align: center;
+      background: var(--cream);
+    }
+
+    .instagram-handle {
+      color: var(--burgundy);
+      font-size: 20px;
+      letter-spacing: 2px;
+      text-decoration: none;
+    }
+
+    /* =========================
+       FAQ
+    ========================== */
+
+    .faq-section {
+      background: var(--blush);
+    }
+
+    .faq {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    details {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 20px;
+    }
+
+    summary {
+      color: var(--burgundy);
+      cursor: pointer;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      font-weight: bold;
+    }
+
+    details p {
+      color: var(--muted);
+      margin-top: 12px;
+      font-size: 13px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact-section {
+      text-align: center;
+      background: var(--burgundy);
+      color: white;
+    }
+
+    .contact-section .section-title {
+      color: white;
+    }
+
+    .contact-section .section-description {
+      color: #f4dfe2;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 13px 24px;
+      border: 1px solid white;
+      color: white;
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .contact-button:hover {
+      background: white;
+      color: var(--burgundy);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: var(--cream);
+      color: var(--muted);
+      padding: 35px 20px;
+      text-align: center;
       font-size: 11px;
       letter-spacing: 1px;
     }
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 40px;
+    .footer-brand {
+      color: var(--burgundy);
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .footer-links {
+      margin: 18px 0;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--burgundy);
+      text-decoration: none;
+    }
+
+    /* =========================
+       CART DRAWER
+    ========================== */
+
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: 200;
+      display: none;
+    }
+
+    .cart-overlay.open {
+      display: block;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: -430px;
+      width: min(430px, 92vw);
+      height: 100vh;
+      background: var(--cream);
+      z-index: 201;
+      padding: 25px;
+      transition: right 0.3s ease;
+      overflow-y: auto;
+      box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+    }
+
+    .cart-drawer.open {
+      right: 0;
+    }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 15px;
+    }
+
+    .cart-header h2 {
+      color: var(--burgundy);
+      font-size: 22px;
+      letter-spacing: 2px;
+    }
+
+    .close-cart {
+      background: none;
+      border: none;
+      color: var(--burgundy);
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    .cart-items {
+      padding: 20px 0;
+    }
+
+    .cart-item {
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .cart-item-name {
+      color: var(--burgundy);
+      font-size: 14px;
+    }
+
+    .cart-item-price {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .remove-item {
+      background: none;
+      border: none;
+      color: var(--burgundy-light);
+      cursor: pointer;
+      font-size: 11px;
+    }
+
+    .cart-total {
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+      color: var(--burgundy);
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .checkout-button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 14px;
+      border: none;
+      background: var(--burgundy);
+      color: white;
+      cursor: pointer;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    .empty-cart {
+      text-align: center;
+      color: var(--muted);
+      padding: 35px 10px;
+      font-size: 14px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 900px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .collections {
-        grid-template-columns: 1fr;
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      nav {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .announcement {
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
+
+      .header-inner {
+        min-height: 65px;
+        padding: 10px 14px;
+      }
+
+      .brand-name {
+        font-size: 13px;
+        letter-spacing: 1.5px;
+      }
+
+      nav {
+        gap: 7px;
+      }
+
+      nav a {
+        font-size: 9px;
+        letter-spacing: 0.8px;
+      }
+
+      .cart-button {
+        padding: 7px 9px;
+        font-size: 10px;
+      }
+
+      .hero {
+        padding: 42px 15px 55px;
+      }
+
+      .hero-logo {
+        width: 78vw;
+        max-width: 300px;
+      }
+
+      .hero h1 {
+        font-size: 31px;
+        letter-spacing: 2px;
+      }
+
+      .hero-tagline {
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+
+      section {
+        padding: 55px 16px;
+      }
+
+      .product-grid {
+        gap: 12px;
+      }
+
+      .product-info {
+        padding: 12px;
+      }
+
+      .product-name {
+        font-size: 14px;
+      }
+
+      .product-actions {
+        flex-direction: column;
+      }
+
+      .category-card {
+        min-height: 140px;
+        font-size: 14px;
+      }
+
+      .why-grid {
+        gap: 5px;
+      }
+
+      .why-card {
+        padding: 18px 8px;
+      }
+
+      .why-card h3 {
+        font-size: 13px;
+      }
+
+      .why-card p {
+        font-size: 11px;
       }
     }
   </style>
@@ -151,68 +792,1057 @@
 
 <body>
 
-  <header>
-    <div class="brand">THE LEOPARD SAVVY</div>
-    <div class="tagline">Timeless. Chic. Fierce Finds.</div>
+  <!-- =========================
+       ANNOUNCEMENT
+  ========================== -->
 
-    <nav>
-      <a href="#">HOME</a>
-      <a href="#shop">SHOP</a>
-      <a href="#about">ABOUT</a>
-      <a href="#contact">CONTACT</a>
-    </nav>
+  <div class="announcement">
+    PREPAID ORDERS ONLY · PAN INDIA SHIPPING
+  </div>
+
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+    <div class="header-inner">
+
+      <a href="#home" class="brand-name">
+        THE LEOPARD SAVVY
+      </a>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+
+        <button class="cart-button" onclick="openCart()">
+          🛍️ <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </nav>
+
+    </div>
   </header>
 
-  <section class="hero">
-    <div>
-      <h1>Timeless.<br>Chic.<br>Fierce.</h1>
 
-      <p>Curated pre-loved pieces for your next unforgettable look.</p>
+  <main>
 
-      <a class="button" href="#shop">SHOP THE COLLECTION</a>
-    </div>
-  </section>
+    <!-- =========================
+         HERO
+    ========================== -->
 
-  <section class="section" id="shop">
-    <h2>Shop Our Finds</h2>
+    <section class="hero" id="home">
 
-    <p>Curated pieces. Unique finds. Made for you.</p>
+      <img
+        src="file_000000006e6c821184533624bb1ba92b.png"
+        alt="The Leopard Savvy official logo"
+        class="hero-logo"
+      >
 
-    <div class="collections">
-      <div class="collection">Y2K</div>
-      <div class="collection">VINTAGE</div>
-      <div class="collection">DRESSES</div>
-      <div class="collection">TOPS</div>
-    </div>
-  </section>
+      <h1>
+        Timeless. Chic. Fierce.
+      </h1>
 
-  <section class="section about" id="about">
-    <h2>The Leopard Savvy</h2>
+      <p class="hero-tagline">
+        Timeless. Chic. Fierce Finds.
+      </p>
 
-    <p>
-      A curated destination for pre-loved fashion,
-      timeless pieces and fierce finds. Every piece is
-      selected with style, individuality and conscious
-      fashion in mind.
-    </p>
-  </section>
+      <a href="#shop" class="button">
+        Shop Now
+      </a>
 
-  <section class="section" id="contact">
-    <h2>Coming Soon</h2>
+    </section>
 
-    <p>
-      Our collection is being carefully curated.
-      Follow us on Instagram for new drops.
-    </p>
 
-    <a class="button" href="#">FOLLOW US</a>
-  </section>
+    <!-- =========================
+         NEW ARRIVALS
+    ========================== -->
+
+    <section class="products-section" id="shop">
+
+      <div class="section-inner">
+
+        <div class="section-heading">
+          <p class="eyebrow">Curated for you</p>
+
+          <h2 class="section-title">
+            New Arrivals
+          </h2>
+
+          <p class="section-description">
+            Discover carefully selected pieces made for wardrobes
+            that deserve a little more personality.
+          </p>
+        </div>
+
+
+        <div class="product-grid" id="productGrid">
+
+          <!--
+            PRODUCT TEMPLATE
+
+            When you are ready to add a real product,
+            copy one product card and change:
+
+            PRODUCT ID
+            PRODUCT NAME
+            PRICE
+            SIZE
+
+            We will later add real product images here.
+          -->
+
+          <article class="product-card">
+
+            <div class="product-image">
+              NEW DROP<br>
+              PRODUCT PHOTO
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-id">
+                TLS-001
+              </div>
+
+              <h3 class="product-name">
+                Coming Soon
+              </h3>
+
+              <div class="product-price">
+                ₹— 
+              </div>
+
+              <div class="product-size">
+                Size information coming soon
+              </div>
+
+              <div class="product-actions">
+                <button
+                  class="add-cart"
+                  onclick="showComingSoon()"
+                >
+                  Add to Cart
+                </button>
+
+                <button
+                  class="whatsapp-order"
+                  onclick="showComingSoon()"
+                >
+                  WhatsApp
+                </button>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="product-card">
+
+            <div class="product-image">
+              NEW DROP<br>
+              PRODUCT PHOTO
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-id">
+                TLS-002
+              </div>
+
+              <h3 class="product-name">
+                Coming Soon
+              </h3>
+
+              <div class="product-price">
+                ₹—
+              </div>
+
+              <div class="product-size">
+                Size information coming soon
+              </div>
+
+              <div class="product-actions">
+                <button
+                  class="add-cart"
+                  onclick="showComingSoon()"
+                >
+                  Add to Cart
+                </button>
+
+                <button
+                  class="whatsapp-order"
+                  onclick="showComingSoon()"
+                >
+                  WhatsApp
+                </button>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="product-card">
+
+            <div class="product-image">
+              NEW DROP<br>
+              PRODUCT PHOTO
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-id">
+                TLS-003
+              </div>
+
+              <h3 class="product-name">
+                Coming Soon
+              </h3>
+
+              <div class="product-price">
+                ₹—
+              </div>
+
+              <div class="product-size">
+                Size information coming soon
+              </div>
+
+              <div class="product-actions">
+                <button
+                  class="add-cart"
+                  onclick="showComingSoon()"
+                >
+                  Add to Cart
+                </button>
+
+                <button
+                  class="whatsapp-order"
+                  onclick="showComingSoon()"
+                >
+                  WhatsApp
+                </button>
+              </div>
+          </article>
+
+
+          <article class="product-card">
+
+            <div class="product-image">
+              NEW DROP<br>
+              PRODUCT PHOTO
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-id">
+                TLS-002
+              </div>
+
+              <h3 class="product-name">
+                Coming Soon
+              </h3>
+
+              <div class="product-price">
+                ₹—
+              </div>
+
+              <div class="product-size">
+                Size information coming soon
+              </div>
+
+              <div class="product-actions">
+
+                <button
+                  class="add-cart"
+                  onclick="showComingSoon()"
+                >
+                  Add to Cart
+                </button>
+
+                <button
+                  class="whatsapp-order"
+                  onclick="showComingSoon()"
+                >
+                  WhatsApp
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="product-card">
+
+            <div class="product-image">
+              NEW DROP<br>
+              PRODUCT PHOTO
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-id">
+                TLS-003
+              </div>
+
+              <h3 class="product-name">
+                Coming Soon
+              </h3>
+
+              <div class="product-price">
+                ₹—
+              </div>
+
+              <div class="product-size">
+                Size information coming soon
+              </div>
+
+              <div class="product-actions">
+
+                <button
+                  class="add-cart"
+                  onclick="showComingSoon()"
+                >
+                  Add to Cart
+                </button>
+
+                <button
+                  class="whatsapp-order"
+                  onclick="showComingSoon()"
+                >
+                  WhatsApp
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="product-card">
+
+            <div class="product-image">
+              NEW DROP<br>
+              PRODUCT PHOTO
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-id">
+                TLS-004
+              </div>
+
+              <h3 class="product-name">
+                Coming Soon
+              </h3>
+
+              <div class="product-price">
+                ₹—
+              </div>
+
+              <div class="product-size">
+                Size information coming soon
+              </div>
+
+              <div class="product-actions">
+
+                <button
+                  class="add-cart"
+                  onclick="showComingSoon()"
+                >
+                  Add to Cart
+                </button>
+
+                <button
+                  class="whatsapp-order"
+                  onclick="showComingSoon()"
+                >
+                  WhatsApp
+                </button>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="categories-section" id="categories">
+
+      <div class="section-inner">
+
+        <div class="section-heading">
+          <p class="eyebrow">Find your style</p>
+
+          <h2 class="section-title">
+            Shop by Category
+          </h2>
+        </div>
+
+        <div class="category-grid">
+
+          <a href="#shop" class="category-card">
+            Dresses
+          </a>
+
+          <a href="#shop" class="category-card">
+            Y2K
+          </a>
+
+          <a href="#shop" class="category-card">
+            Tops
+          </a>
+
+          <a href="#shop" class="category-card">
+            Outerwear
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section>
+
+      <div class="section-inner">
+
+        <div class="section-heading">
+          <p class="eyebrow">Why us</p>
+
+          <h2 class="section-title">
+            The Leopard Savvy Way
+          </h2>
+        </div>
+
+        <div class="why-grid">
+
+          <div class="why-card">
+            <div class="why-icon">✦</div>
+            <h3>Curated Finds</h3>
+            <p>
+              Pieces selected with personality, style and individuality in mind.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">♡</div>
+            <h3>Unique Style</h3>
+            <p>
+              Fashion finds that help your wardrobe feel unmistakably yours.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">✧</div>
+            <h3>Measurements</h3>
+            <p>
+              Product listings will include sizes and measurements wherever applicable.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">📦</div>
+            <h3>PAN India</h3>
+            <p>
+              Carefully packed prepaid orders shipped across India.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="about-section" id="about">
+
+      <div class="about-inner">
+
+        <p class="eyebrow">
+          The story
+        </p>
+
+        <h2 class="section-title">
+          The Leopard Savvy
+        </h2>
+
+        <p>
+          The Leopard Savvy is a fashion space for timeless, chic and
+          expressive finds — bringing together vintage character,
+          Y2K energy and modern boutique style.
+        </p>
+
+        <p>
+          Every piece is chosen to help you find something a little
+          different, a little special and completely your own.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="launch-section">
+
+      <div class="launch-box">
+
+        <p class="eyebrow">
+          Something beautiful is coming
+        </p>
+
+        <h2>
+          Launching Soon
+        </h2>
+
+        <p>
+          Our first curated collection is being prepared.
+          Follow us on Instagram for new drops, previews and announcements.
+        </p>
+
+        <a
+          href="https://instagram.com/the_leopard_savvy"
+          target="_blank"
+          class="button"
+        >
+          Follow on Instagram
+        </a>
+
+      </div>
+
+    </section>
+                  <section class="instagram-section">
+
+      <div class="section-inner">
+
+        <p class="eyebrow">Follow the wardrobe</p>
+
+        <h2 class="section-title">Instagram</h2>
+
+        <br>
+
+        <a
+          class="instagram-handle"
+          href="https://instagram.com/the_leopard_savvy"
+          target="_blank"
+        >
+          @the_leopard_savvy
+        </a>
+
+        <p class="section-description">
+          New finds, styling inspiration, launches and behind-the-scenes moments.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="faq-section">
+
+      <div class="section-inner">
+
+        <div class="section-heading">
+
+          <p class="eyebrow">Need to know</p>
+
+          <h2 class="section-title">
+            Frequently Asked Questions
+          </h2>
+
+        </div>
+
+        <div class="faq">
+
+          <details>
+            <summary>Do you offer Cash on Delivery?</summary>
+            <p>
+              No. The Leopard Savvy accepts prepaid orders only.
+            </p>
+          </details>
+
+          <details>
+            <summary>Do you ship across India?</summary>
+            <p>
+              Yes. We offer PAN India shipping.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can I order through WhatsApp?</summary>
+            <p>
+              Yes. You can contact The Leopard Savvy on WhatsApp
+              to place an order and receive payment instructions.
+            </p>
+          </details>
+
+          <details>
+            <summary>Are sizes and measurements provided?</summary>
+            <p>
+              Yes. Product listings will include available sizes
+              and measurements wherever applicable.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can I return or exchange an item?</summary>
+            <p>
+              Please review our Return & Exchange Policy before
+              confirming your purchase.
+            </p>
+          </details>
+
+          <details>
+            <summary>What is the packing video policy?</summary>
+            <p>
+              Please review our Packing Video Policy for the
+              requirements applicable to order-related issues.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>    <section class="contact-section" id="contact">
+
+      <div class="section-inner">
+
+        <p class="eyebrow">Let's connect</p>
+
+        <h2 class="section-title">
+          Contact The Leopard Savvy
+        </h2>
+
+        <p class="section-description">
+          Questions about an item, an order or the latest drop?
+          We'd love to hear from you.
+        </p>
+
+        <div class="contact-buttons">
+
+          <a
+            class="contact-button"
+            href="https://wa.me/916303488529"
+            target="_blank"
+          >
+            WhatsApp
+          </a>
+
+          <a
+            class="contact-button"
+            href="https://instagram.com/the_leopard_savvy"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
+          <a
+            class="contact-button"
+            href="https://d.freeup.app/LPCXDJ"
+            target="_blank"
+          >
+            FreeUp
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section id="policies">
+
+      <div class="section-inner">
+
+        <div class="section-heading">
+
+          <p class="eyebrow">Store information</p>
+
+          <h2 class="section-title">
+            Our Policies
+          </h2>
+
+          <p class="section-description">
+            Clear and simple information before you place an order.
+          </p>
+
+        </div>
+
+        <div class="faq">
+
+          <details>
+            <summary>Shipping Policy</summary>
+            <p>
+              We ship across India. Shipping charges, delivery
+              timelines and tracking information will be provided
+              according to the order and shipping service selected.
+            </p>
+          </details>
+
+          <details>
+            <summary>Return & Exchange Policy</summary>
+            <p>
+              Please review the applicable return and exchange
+              conditions before confirming your order.
+            </p>
+          </details>
+
+          <details>
+            <summary>Cancellation Policy</summary>
+            <p>
+              Orders may only be cancelled according to the
+              cancellation conditions applicable at the time
+              of purchase.
+            </p>
+          </details>
+
+          <details>
+            <summary>Packing Video Policy</summary>
+            <p>
+              Customers should record a continuous, clear
+              unboxing and packing-condition video where required
+              for an order-related claim.
+            </p>
+          </details>
+
+          <details>
+            <summary>Privacy Policy</summary>
+            <p>
+              Information provided while placing an order will
+              be used for order processing, communication,
+              shipping and customer support.
+            </p>
+          </details>
+
+          <details>
+            <summary>Terms & Conditions</summary>
+            <p>
+              By placing an order, customers agree to the store's
+              applicable terms, payment conditions, shipping
+              conditions and policies.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
 
   <footer>
-    © 2026 THE LEOPARD SAVVY
-    <br><br>
-    Timeless. Chic. Fierce Finds.
+
+    <div class="footer-brand">
+      THE LEOPARD SAVVY
+    </div>
+
+    <div>
+      Timeless. Chic. Fierce Finds.
+    </div>
+
+    <div class="footer-links">
+
+      <a href="#shop">Shop</a>
+      <a href="#categories">Categories</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#policies">Policies</a>
+
+    </div>
+
+    <div>
+      © 2026 The Leopard Savvy · Prepaid orders only
+    </div>
+
   </footer>
+
+
+  <div
+    class="cart-overlay"
+    id="cartOverlay"
+    onclick="closeCart()"
+  ></div>
+
+
+  <aside
+    class="cart-drawer"
+    id="cartDrawer"
+  >
+
+    <div class="cart-header">
+
+      <h2>Your Cart</h2>
+
+      <button
+        class="close-cart"
+        onclick="closeCart()"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div
+      class="cart-items"
+      id="cartItems"
+    >
+      <div class="empty-cart">
+        Your cart is empty.
+      </div>
+    </div>
+
+
+    <div
+      class="cart-total"
+      id="cartTotal"
+    >
+      Total: ₹0
+    </div>
+
+
+    <button
+      class="checkout-button"
+      onclick="websiteCheckout()"
+    >
+      Proceed to Prepaid Checkout
+    </button>
+
+
+    <button
+      class="checkout-button"
+      onclick="whatsappCartOrder()"
+    >
+      Order Cart via WhatsApp
+    </button>
+
+  </aside>
+
+
+  <script>
+
+    const WHATSAPP_NUMBER = "916303488529";
+
+    let cart = [];
+
+
+    function openCart() {
+
+      document
+        .getElementById("cartDrawer")
+        .classList.add("open");
+
+      document
+        .getElementById("cartOverlay")
+        .classList.add("open");
+
+      renderCart();
+    }
+
+
+    function closeCart() {
+
+      document
+        .getElementById("cartDrawer")
+        .classList.remove("open");
+
+      document
+        .getElementById("cartOverlay")
+        .classList.remove("open");
+    }
+
+
+    function addToCart(id, name, price) {
+
+      cart.push({
+        id: id,
+        name: name,
+        price: price
+      });
+
+      updateCartCount();
+
+      renderCart();
+
+      openCart();
+    }
+
+
+    function removeFromCart(index) {
+
+      cart.splice(index, 1);
+
+      updateCartCount();
+
+      renderCart();
+    }
+
+
+    function updateCartCount() {
+
+      document.getElementById("cartCount").textContent =
+        cart.length;
+    }
+
+
+    function renderCart() {
+
+      const container =
+        document.getElementById("cartItems");
+
+      const totalElement =
+        document.getElementById("cartTotal");
+
+
+      if (cart.length === 0) {
+
+        container.innerHTML =
+          '<div class="empty-cart">Your cart is empty.</div>';
+
+        totalElement.textContent =
+          "Total: ₹0";
+
+        return;
+      }
+
+
+      let total = 0;
+
+
+      container.innerHTML =
+        cart.map((item, index) => {
+
+          total += Number(item.price) || 0;
+
+          return `
+            <div class="cart-item">
+
+              <div>
+
+                <div class="cart-item-name">
+                  ${item.name}
+                </div>
+
+                <div class="cart-item-price">
+                  ₹${item.price}
+                </div>
+
+              </div>
+
+              <button
+                class="remove-item"
+                onclick="removeFromCart(${index})"
+              >
+                REMOVE
+              </button>
+
+            </div>
+          `;
+
+        }).join("");
+
+
+      totalElement.textContent =
+        "Total: ₹" + total;
+    }
+
+
+    function whatsappOrder(id, name, price) {
+
+      const message =
+        `Hello The Leopard Savvy!%0A%0A` +
+        `I would like to order:%0A` +
+        `Product ID: ${id}%0A` +
+        `Item: ${name}%0A` +
+        `Price: ₹${price}%0A%0A` +
+        `Please share the prepaid payment instructions.`;
+
+      window.open(
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`,
+        "_blank"
+      );
+    }
+
+
+    function whatsappCartOrder() {
+
+      if (cart.length === 0) {
+
+        alert("Your cart is empty.");
+
+        return;
+      }
+
+
+      let message =
+        "Hello The Leopard Savvy!%0A%0A" +
+        "I would like to order:%0A%0A";
+
+
+      cart.forEach(item => {
+
+        message +=
+          `• ${item.id} — ${item.name} — ₹${item.price}%0A`;
+
+      });
+
+
+      let total =
+        cart.reduce(
+          (sum, item) =>
+            sum + (Number(item.price) || 0),
+          0
+        );
+
+
+      message +=
+        `%0ATotal: ₹${total}%0A%0A` +
+        "Please share the prepaid payment instructions.";
+
+
+      window.open(
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`,
+        "_blank"
+      );
+    }
+
+
+    function websiteCheckout() {
+
+      alert(
+        "Secure prepaid website checkout will be connected next."
+      );
+    }
+
+
+    function showComingSoon() {
+
+      alert(
+        "The Leopard Savvy collection is launching soon. " +
+        "Follow us on Instagram for the first drop!"
+      );
+    }
+
+  </script>
 
 </body>
 </html>
