@@ -3,16 +3,216 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>The Leopard Savvy | Timeless. Chic. Fierce Finds.</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fdf8f4;
+      color: #241d1d;
+    }
+
+    header {
+      padding: 22px 25px;
+      text-align: center;
+      border-bottom: 1px solid #eaded8;
+      background: #fdf8f4;
+    }
+
+    .brand {
+      font-family: Georgia, serif;
+      font-size: 27px;
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+
+    .tagline {
+      margin-top: 7px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav a {
+      color: #241d1d;
+      text-decoration: none;
+      margin: 0 9px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 50px 25px;
+      background: #f5e2df;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: 52px;
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #241d1d;
+      color: white;
+      text-decoration: none;
+      padding: 15px 30px;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .section {
+      padding: 65px 25px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .section p {
+      color: #665b58;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+
+    .collections {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .collection {
+      background: #ead8d4;
+      padding: 55px 10px;
+      font-family: Georgia, serif;
+      font-size: 20px;
+    }
+
+    .about {
+      background: #241d1d;
+      color: white;
+    }
+
+    .about p {
+      color: #eee3df;
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.8;
+    }
+
+    footer {
+      background: #171313;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .collections {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <h1>THE LEOPARD SAVVY</h1>
+  <header>
+    <div class="brand">THE LEOPARD SAVVY</div>
+    <div class="tagline">Timeless. Chic. Fierce Finds.</div>
 
-  <p>Timeless. Chic. Fierce Finds.</p>
+    <nav>
+      <a href="#">HOME</a>
+      <a href="#shop">SHOP</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
 
-  <p>Our curated collection of pre-loved fashion is coming soon.</p>
+  <section class="hero">
+    <div>
+      <h1>Timeless.<br>Chic.<br>Fierce.</h1>
+
+      <p>Curated pre-loved pieces for your next unforgettable look.</p>
+
+      <a class="button" href="#shop">SHOP THE COLLECTION</a>
+    </div>
+  </section>
+
+  <section class="section" id="shop">
+    <h2>Shop Our Finds</h2>
+
+    <p>Curated pieces. Unique finds. Made for you.</p>
+
+    <div class="collections">
+      <div class="collection">Y2K</div>
+      <div class="collection">VINTAGE</div>
+      <div class="collection">DRESSES</div>
+      <div class="collection">TOPS</div>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <h2>The Leopard Savvy</h2>
+
+    <p>
+      A curated destination for pre-loved fashion,
+      timeless pieces and fierce finds. Every piece is
+      selected with style, individuality and conscious
+      fashion in mind.
+    </p>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Coming Soon</h2>
+
+    <p>
+      Our collection is being carefully curated.
+      Follow us on Instagram for new drops.
+    </p>
+
+    <a class="button" href="#">FOLLOW US</a>
+  </section>
+
+  <footer>
+    © 2026 THE LEOPARD SAVVY
+    <br><br>
+    Timeless. Chic. Fierce Finds.
+  </footer>
 
 </body>
 </html>
